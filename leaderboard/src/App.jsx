@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UserSelector from "./components/UserSelector";
-import ClaimButton from "./components/ClaimButton";
+import ClaimButton from "./components/claimButton";
 import Leaderboard from "./components/Leaderboard";
-import AddUserForm from "./components/AddUserForm";
+import AddUserForm from "./components/addUserForm";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -12,7 +12,8 @@ function App() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("/api/users");
+ 
+const res = await axios.get("https://leaderboard-task-9.onrender.com/api/users");
       setUsers(res.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -21,7 +22,8 @@ function App() {
 
   const fetchLeaderboard = async () => {
     try {
-      const res = await axios.get("/api/claim/leaderboard");
+      
+const res = await axios.get("https://leaderboard-task-9.onrender.com/api/claim/leaderboard");
       setLeaderboard(res.data);
     } catch (error) {
       console.error("Error fetching leaderboard:", error);

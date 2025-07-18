@@ -8,7 +8,7 @@ const AddUserForm = ({ onAdd }) => {
   const handleAdd = async () => {
     if (!name.trim()) return;
     try {
-      const res = await axios.post("/api/users/add", { name });
+  const res = await axios.post("https://leaderboard-task-9.onrender.com/api/users/add", { name });
       onAdd(res.data);
       setName("");
 

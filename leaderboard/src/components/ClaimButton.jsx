@@ -7,7 +7,8 @@ const ClaimButton = ({ selectedUser, onClaim }) => {
     if (!selectedUser) return toast.warning("Please select a user first!");
 
     try {
-      const res = await axios.post("/api/claim", { userId: selectedUser });
+     const res = await axios.post("https://leaderboard-task-9.onrender.com/api/claim", { userId: selectedUser });
+
       const data = res.data;
       
       toast.success(`🎉 You claimed ${data.claimedPoints} points!`, {

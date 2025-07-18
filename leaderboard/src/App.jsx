@@ -22,7 +22,7 @@ const res = await axios.get("https://leaderboard-task-9.onrender.com/api/users")
 
   const fetchLeaderboard = async () => {
     try {
-      
+      console.log("Fetching from leaderboard API...");
 const res = await axios.get("https://leaderboard-task-9.onrender.com/api/claim/leaderboard");
       setLeaderboard(res.data);
     } catch (error) {
